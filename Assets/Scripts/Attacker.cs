@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Attacker : MonoBehaviour
 {
+
+    [SerializeField] [Range(0f,5f)] float WalkSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +16,6 @@ public class Attacker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(Vector2.left * WalkSpeed * Time.deltaTime);
     }
 }
