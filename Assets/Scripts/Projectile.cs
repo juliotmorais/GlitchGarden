@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] float speed = 1f;
+    [SerializeField] int damage = 50;
 
 
 
@@ -16,9 +17,8 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D otherCollider)
     {
-        Debug.Log("I hit " + otherCollider.name);
-        DealDamage();
+        var health = otherCollider.GetComponent<Health>();
+        health.DealDamage(damage);
         Destroy(gameObject);
-        
     }
 }
