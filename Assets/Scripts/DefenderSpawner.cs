@@ -9,7 +9,7 @@ public class DefenderSpawner : MonoBehaviour
 {
     Defender defender;
     private void OnMouseDown() { 
-        SpawnDefender(GetSquareClicked());
+        AttemptToPlaceDefenderAt(GetSquareClicked());
     }
 
     private void SpawnDefender(Vector2 coordinates)
@@ -37,5 +37,16 @@ public class DefenderSpawner : MonoBehaviour
     public void SetSelectedDefender(Defender defenderToSelect)
     {
         defender = defenderToSelect;
+    }
+
+    private void AttemptToPlaceDefenderAt(Vector2 gridposition)
+    {
+        var StarDisplay = FindObjectOfType<StarDisplay>();
+        int defenderCost = defender.GetStarCost();
+        if (StarDisplay.HaveEnoughStars(defenderCost))
+        {
+            SpawnDefender(gridposition);
+            StarDisplay.subtractStars(defenderCost);
+        }
     }
 }
