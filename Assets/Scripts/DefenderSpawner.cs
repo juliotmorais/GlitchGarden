@@ -7,14 +7,14 @@ using Vector2 = UnityEngine.Vector2;
 
 public class DefenderSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject defender;
+    Defender defender;
     private void OnMouseDown() { 
         SpawnDefender(GetSquareClicked());
     }
 
     private void SpawnDefender(Vector2 coordinates)
     {
-        GameObject newDefender = Instantiate(defender, coordinates, UnityEngine.Quaternion.identity) as GameObject;
+        Defender newDefender = Instantiate(defender, coordinates, UnityEngine.Quaternion.identity) as Defender;
     }
 
     private Vector2 GetSquareClicked()
@@ -32,5 +32,10 @@ public class DefenderSpawner : MonoBehaviour
         float newY = Mathf.RoundToInt(roundedPos.y)+0.14f;
         return new Vector2(newX, newY);
 
+    }
+
+    public void SetSelectedDefender(Defender defenderToSelect)
+    {
+        defender = defenderToSelect;
     }
 }
