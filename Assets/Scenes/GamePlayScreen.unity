@@ -686,7 +686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc0f758bf163484f9efa26b5f9b72ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defenderPrefab: {fileID: 7961470595159384856, guid: e66e9162bc279894ba1e80f8338e35be,
+  defenderPrefab: {fileID: 7798906803947558320, guid: 2114fcdb14001c947bb4668c34b15d4c,
     type: 3}
 --- !u!61 &767399066
 BoxCollider2D:

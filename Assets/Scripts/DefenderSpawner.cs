@@ -29,7 +29,7 @@ public class DefenderSpawner : MonoBehaviour
     private Vector2 SnapToGrid(Vector2 roundedPos)
     {
         float newX = Mathf.RoundToInt(roundedPos.x);
-        float newY = Mathf.RoundToInt(roundedPos.y)+0.14f;
+        float newY = Mathf.RoundToInt(roundedPos.y);
         return new Vector2(newX, newY);
 
     }
