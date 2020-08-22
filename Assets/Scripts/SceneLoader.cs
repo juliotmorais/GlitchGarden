@@ -40,4 +40,12 @@ public class SceneLoader : MonoBehaviour
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene(1);
     }
+    public void LoseScreen()
+    {
+        SceneManager.LoadScene(1);
+    }
+    public void LoadGamePlay()
+    {
+        SceneManager.LoadScene(2);
+    }
 }
