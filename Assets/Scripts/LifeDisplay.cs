@@ -26,7 +26,7 @@ public class LifeDisplay : MonoBehaviour
         
         if(life <= 0)
         {
-            FindObjectOfType<SceneLoader>().LoseScreen();
+            FindObjectOfType<LevelController>().HandleLoseCondition();
         }
     }
 

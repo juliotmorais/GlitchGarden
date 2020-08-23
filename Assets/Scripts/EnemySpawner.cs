@@ -22,12 +22,10 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StopSpawning()
     {
-        
+        spawn = false;
     }
-
 
     private void SpawnAttacker()
     {
@@ -40,7 +38,5 @@ public class EnemySpawner : MonoBehaviour
         Attacker newAttacker = Instantiate(myAttacker, transform.position, transform.rotation) as Attacker;
 
         newAttacker.transform.parent = transform;
-
-        //Instantiate(attackerPrefab, transform.position, transform.rotation);
     }
 }

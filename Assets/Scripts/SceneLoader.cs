@@ -19,9 +19,9 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-    private void LoadStartScreen()
+    public void LoadStartScreen()
     {
-        
+        Time.timeScale = 1;
         SceneManager.LoadScene(1);
     }
     public void LoadStartScreenFromSplashScreen()
@@ -33,7 +33,10 @@ public class SceneLoader : MonoBehaviour
     {
         Application.Quit();
     }
-
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(currentSceneIndex);
+    }
     IEnumerator LoadStartScreenWithDelay()
     {
 
