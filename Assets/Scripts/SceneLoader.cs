@@ -28,7 +28,10 @@ public class SceneLoader : MonoBehaviour
     {
         StartCoroutine(LoadStartScreenWithDelay());
     }
-
+    public void LoadOptionsScreen()
+    {
+        SceneManager.LoadScene(3);
+    }
     public void QuitGame()
     {
         Application.Quit();

@@ -8,6 +8,21 @@ using Vector2 = UnityEngine.Vector2;
 public class DefenderSpawner : MonoBehaviour
 {
     Defender defender;
+    GameObject defenderParent;
+    const string DEFENDER_PARENT_NAME = "Defenders";
+
+    private void Start()
+    {
+        CreateDefenderParent();
+    }
+    private void CreateDefenderParent()
+    {
+        defenderParent = GameObject.Find(DEFENDER_PARENT_NAME);
+        if (!defenderParent)
+        {
+            defenderParent = new GameObject(DEFENDER_PARENT_NAME);
+        }
+    }
     private void OnMouseDown() { 
         AttemptToPlaceDefenderAt(GetSquareClicked());
     }
@@ -15,6 +30,7 @@ public class DefenderSpawner : MonoBehaviour
     private void SpawnDefender(Vector2 coordinates)
     {
         Defender newDefender = Instantiate(defender, coordinates, UnityEngine.Quaternion.identity) as Defender;
+        newDefender.transform.parent = defenderParent.transform;
     }
 
     private Vector2 GetSquareClicked()
